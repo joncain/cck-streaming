@@ -1,0 +1,21 @@
+services:
+  flask:
+    hostname: flask
+    build: ./flask
+    ports:
+      - "8080:8080"
+    networks:
+      - streaming
+    extra_hosts:
+      - "docker.internal:127.0.0.1"
+  nginx:
+    hostname: nginx
+    build: ./nginx
+    ports:
+      - "1935:1935"
+    networks:
+      - streaming
+    extra_hosts:
+      - "docker.internal:127.0.0.1"
+networks:
+  streaming:
