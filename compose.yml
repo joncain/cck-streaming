@@ -13,6 +13,7 @@ services:
     build: ./nginx
     ports:
       - "1935:1935"
+      - "8081:8081"
     networks:
       - streaming
     extra_hosts:

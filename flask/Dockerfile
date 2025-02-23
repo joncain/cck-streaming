@@ -9,10 +9,9 @@ ENV FLASK_RUN_PORT=8080
 ENV STREAMKEY=${STREAMKEY}
 
 RUN apk add --no-cache gcc musl-dev linux-headers
-COPY requirements.txt requirements.txt
+COPY . .
 RUN pip install -r requirements.txt
 
 EXPOSE 8080
 
-COPY app.py .
 CMD ["flask", "run", "--debug"]

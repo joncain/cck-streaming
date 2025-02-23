@@ -55,6 +55,8 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
 
 # Set up config file
 COPY nginx.conf /etc/nginx/nginx.conf
+RUN mkdir -p /var/www/live
 
 EXPOSE 1935
+EXPOSE 8081 
 CMD ["nginx", "-g", "daemon off;"]

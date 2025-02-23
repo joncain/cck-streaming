@@ -1,8 +1,13 @@
 import os
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
+
+
+@app.route('/client')
+def example():
+    return render_template('client/index.html') 
 
 @app.route('/on_publish', methods=['POST'])
 def on_publish():
